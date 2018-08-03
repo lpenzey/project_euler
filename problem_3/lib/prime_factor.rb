@@ -6,16 +6,14 @@ class PrimeFactor
   end
 
   def factor_finder
-    div = 2
-    largest_factor = 0
-    while div <= @limit
-      if @limit % div == 0
-        @limit /= div
-        largest_factor = div
-        div += 1
+    factors = []
+    p = 2
+    while p <= @limit
+      if @limit  % p == 0
+        factors.push(p)
       end
-      div += 1
+      p +=1
     end
-    largest_factor
+    largest_prime = factors.select {|x| not (2..(Math.sqrt(x))).any? {|i| x % i  == 0} }.max
   end
 end

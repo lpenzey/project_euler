@@ -21,7 +21,6 @@ class FibonacciCalculator
   end
 
   private
-
   def next_fib(fib, place)
     (fib[place] + fib[place + 1])
   end
